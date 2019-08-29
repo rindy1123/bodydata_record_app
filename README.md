@@ -35,6 +35,11 @@ CSS
 SQLite3  
 django 2.2.4  
 
+## git clone
+```
+$ git clone https://github.com/rindy1123/bodydata_record_app.git
+```
+
 ## Import
 django
 ```
