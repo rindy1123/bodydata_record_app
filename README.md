@@ -7,7 +7,10 @@ You can record what type of exercise you did, what you ate, and your weight.
   + Login and Home and Timeline screen
   + Edit data
 + Environment
++ git clone
 + Import
++ Migration
++ Create admin acconunt
 + Run server
 ## Description
 You can get healthier by using this app.  
@@ -53,6 +56,8 @@ $ python manage.py migrate
 ```
 ## Create admin account
 ```
+$ python manage.py createsuperuser
+
 Username: <username>
 Email address: <email@example.com>
 Password: <password>
