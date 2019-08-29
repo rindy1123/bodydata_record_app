@@ -1,4 +1,4 @@
-from .models import WorkoutModel, DietModel, BodyModel
+from bodydata_record_app.models import WorkoutModel, DietModel, BodyModel
 from django.contrib.auth import get_user_model
 
 def get_data(name, date):

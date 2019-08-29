@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import homefunc, loginfunc, signupfunc, CreateWorkout, CreateDiet,\
-    CreateBody, logoutfunc, DeleteWorkout, DeleteDiet, DeleteBody, UpdateWorkout,\
-    UpdateDiet, UpdateBody, home_change_datefunc, timeline_workoutfunc,\
-    timeline_dietfunc, timeline_bodyfunc
+from bodydata_record_app.views.views import homefunc, loginfunc, signupfunc, logoutfunc, home_change_datefunc, \
+    timeline_workoutfunc, timeline_dietfunc, timeline_bodyfunc
+from bodydata_record_app.views.edit_views import CreateWorkout, CreateDiet,CreateBody, DeleteWorkout, \
+    DeleteDiet, DeleteBody, UpdateWorkout, UpdateDiet, UpdateBody
 
 urlpatterns = [
     path('', loginfunc, name='login'),
