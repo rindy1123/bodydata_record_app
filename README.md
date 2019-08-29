@@ -42,8 +42,7 @@ $ pip install django
 ```
 
 ## Run server
-```
-$ cd muscleproject2  
+``` 
 
 $ python manage.py runserver
 
