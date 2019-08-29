@@ -1,0 +1,57 @@
+{% extends 'base_afterlogin.html' %}
+
+{% block customcss %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'timeline.css' %}">
+{% endblock customcss %}
+
+{% block title %}
+タイムライン/筋トレメニュー
+{% endblock title %}
+
+
+{% block header %}
+<h1>BodyData Record App</h1>
+    <a href="{% url 'home' %}" class="btn btn-secondary btn-sm">ホーム画面へ</a>
+    <a href="{% url 'timeline_workout' %}" class="btn btn-secondary disabled btn-sm">筋トレメニュー</a>
+    <a href="{% url 'timeline_diet' %}" class="btn btn-secondary btn-sm">食事管理</a>
+    <a href="{% url 'timeline_body' %}" class="btn btn-secondary btn-sm">体重管理</a>
+
+{% endblock header %}
+
+{% block content %}
+<div class="space"></div>
+<div class="menu">
+    <p>筋トレメニュー</p>
+</div>
+{% for item in workout_data %}
+<div class="container">
+<div class="info">
+    <p>投稿者:{{ item.author }}</p>
+    <p>日付:{{ item.date }}</p>
+    <p>種目名:{{ item.name }}</p>
+    <p>重量:{{ item.weight }}kg</p>
+    <p>回数:{{ item.reps }}</p>
+    <p>セット数:{{ item.set }}</p>
+</div>
+</div>
+{% endfor %}
+{% endblock content %}
+
+{% block paginator %}
+<span class="step-links">
+        {% if workout_data.has_previous %}
+            <a href="?page=1">&laquo; 最初のページ</a>・
+            <a href="?page={{ workout_data.previous_page_number }}">前へ</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ workout_data.number }} / {{ workout_data.paginator.num_pages }}.
+        </span>
+
+        {% if workout_data.has_next %}
+            <a href="?page={{ workout_data.next_page_number }}">次へ</a>・
+            <a href="?page={{ workout_data.paginator.num_pages }}">最後のページ &raquo;</a>
+        {% endif %}
+</span>
+{% endblock paginator %}
