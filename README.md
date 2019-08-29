@@ -40,7 +40,27 @@ django
 ```
 $ pip install django
 ```
+## Migration
+```
+$ python manage.py makemigrations
 
+$ python manage.py migrate
+```
+## Create admin account
+```
+Username: <username>
+Email address: <email@example.com>
+Password: <password>
+```
+If errors has emerged like this, you don't have to worry.
+```
+This password is too short. It must contain at least 6 characters.
+This password is too common.
+This password is entirely numeric.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+```
+Then, you can go to administration site.
 ## Run server
 ``` 
 
@@ -54,4 +74,7 @@ Quit the server with CONTROL-C.
 
 ```
 Then go to http://127.0.0.1:8000/
+
+You can see urls in 'bodydata_record_app/bodydata_record_app/urls.py'.
+If you want to go to 'Signup page', add url like this 'http://127.0.0.1:8000/signup/'.
 
